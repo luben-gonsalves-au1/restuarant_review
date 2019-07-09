@@ -11,7 +11,12 @@ var hbs = exphbs.create({
   helpers: {
     calc: function(a, b) {
       return a * b;
+    } /*,
+    img: function(img a)
+    {
+
     }
+      */
   }
 });
 app.engine("handlebars", hbs.engine);

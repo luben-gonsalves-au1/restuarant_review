@@ -2,12 +2,23 @@ const express = require("express");
 var multer = require("multer");
 var upload = multer({ dest: "public/uploads/" });
 var cloudinary = require("cloudinary").v2;
+require("dotenv").config();
 const router = express.Router();
 const autoIncrement = require("mongodb-autoincrement");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
+console.log(process.env.CLOUD_NAME);
 var before = [
+  {
+    name: "Home",
+    link: "../home"
+  },
   {
     name: "Sign up",
     link: "signup"
