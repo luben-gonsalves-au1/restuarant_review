@@ -86,10 +86,8 @@ router.get('/home', function(req, res ){
 });
 */
 router.get("/", function(req, res) {
-  res.render("landing");
+  res.redirect("/home");
 });
-
-router.get("/", function(req, res) {});
 
 router.get("/reset_password", function(req, res) {
   if (req.session.user == true) {
